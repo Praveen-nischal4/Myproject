@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:util="http://www.springframework.org/schema/util"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+      http://www.springframework.org/schema/util
+      http://www.springframework.org/schema/util/spring-util-4.0.xsd">   
+      
+       <util:list id="list" list-class="java.util.ArrayList">
+       <value> Website desginer</value>
+     <value> MCA</value>
+     <value> PHD</value>
+     </util:list>
+      
+      <bean id="sub" class="com.praveen.MyProject.demo.Subject">
+      <constructor-arg type="int" value="100"></constructor-arg>
+      <constructor-arg value="Maths"></constructor-arg>
+      </bean>
+      
+     <bean id="teach" class="com.praveen.MyProject.demo.Teacher" p:tid="1" p:name="S.S.T" p:mobile="8081562235">
+     </bean> 
+      
+      <bean id="tea" class="com.praveen.MyProject.demo.Teacher">
+      <constructor-arg value="2"></constructor-arg>
+        <constructor-arg value="H.K.Deva"></constructor-arg>
+          <constructor-arg value="9415256102"></constructor-arg>
+          <constructor-arg>
+          <list>
+           <value> B.Sc</value>
+           <value> M.Sc</value>
+           <value> PHd</value>
+           <value> Specialist</value>
+          </list>          
+          </constructor-arg>
+          
+          <constructor-arg>
+          <map>
+          <entry key="sub_id" value="200"></entry>
+          <entry key="sub_name" value="Chemistry"></entry>
+          </map>
+          </constructor-arg>
+      </bean>
+      
+      <bean  id="myTea" class="com.praveen.MyProject.demo.Teacher">
+      <property name="tid" value="3"></property>
+      <property name="name" value="S.K.Tiwari"></property>
+      <property name="mobile">
+      <value>7376521425</value>
+      </property>
+      
+      <property name="Qualification">
+      <list>
+       <value> B.Tech</value>
+           <value> M.C.A</value>
+           <value> PHd</value>
+           <value> Special Computer Course</value>
+      </list>
+      </property>
+      
+      <property name="Subject">
+      <map>
+      <entry key="sub_id" value="4"></entry>
+      <entry key="sub_name" value="Computers"></entry>
+      </map>
+      </property>
+      </bean>
+      
+      <bean id="Te" class="com.praveen.MyProject.demo.Teacher">
+      <property name="tid" value="4"></property>
+      <property name="name" value="K.K.Bhutani"></property>
+      <property name="mobile">
+      <value>5262521425</value>
+      </property>
+      
+      <property name="Qualification">
+      <ref bean="list"></ref>
+      </property>
+      </bean>
+</beans>

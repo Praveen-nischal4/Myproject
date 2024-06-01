@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+      
+ <bean id="dept" class="com.praveen.MyProject.model.Department" p:deptid="100" p:dname="Sales" p:grade="A">
+ </bean>    
+      
+      
+<bean id="emp" class="com.praveen.MyProject.model.Employee" p:empid="1" p:ename="Prachi" p:salary="13500.56" p:address="Delhi" p:dept-ref="dept">
+
+</bean>      
+      
+</beans> 

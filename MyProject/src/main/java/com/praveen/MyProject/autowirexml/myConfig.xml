@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"    
+      xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+     
+ <bean id="department" class="com.praveen.MyProject.autowirexml.Department" p:dname="Sales" p:ceo="Mr S.K.Gaikwad" autowire-candidate="false">
+ </bean>  
+ 
+ <bean id="department2" class="com.praveen.MyProject.autowirexml.Department" p:dname="Production" p:ceo="Mr T.N.Roy" >
+ </bean>   
+      
+ <bean id="emp" class="com.praveen.MyProject.autowirexml.Employee" p:empid="1" p:empname="Suraj" p:email="surajsingh2@gmail.com" p:salary="35560.25" autowire="byName"> 
+ </bean>     
+
+
+<bean id="emp2" class="com.praveen.MyProject.autowirexml.Employee" p:empid="2" p:empname="Siraj" p:email="sirajkhan32@gmail.com" p:salary="55895.25" autowire="byType"> 
+ </bean> 
+ 
+ <bean id="emp3" class="com.praveen.MyProject.autowirexml.Employee" p:empid="3" p:empname="Aafreen" p:email="aafreensheikh234@gmail.com" p:salary="75560.25" autowire="constructor"> 
+ </bean>
+</beans>
